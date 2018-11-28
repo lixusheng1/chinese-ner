@@ -4,7 +4,7 @@ from model.config import Config
 import sys
 import pre_processing
 import final_predict
-def main(input_file,output_file):
+def main():
     # create instance of config
 
     pre_processing.pre_processing_test(input_file)
@@ -24,14 +24,10 @@ def main(input_file,output_file):
     model.restore_session(config.dir_model)
     model.run_predict(predict)
 
-    pre_processing.predict_xls()
-    final_predict.predict(output_file)
 
 
 
 
 
 if __name__ == "__main__":
-    input_file=sys.argv[1]
-    output_file=sys.argv[2]
-    main(input_file,output_file)
+    main()
