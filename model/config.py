@@ -46,7 +46,7 @@ class Config():
     dim_word = 300
 
     # glove files
-    filename_glove = "data/glove.6B/word2vec.40B.{}d.txt".format(dim_word)
+    filename_glove = "data/word2vec.40B.{}d.txt".format(dim_word)
     # trimmed embeddings (created from glove_filename with build_data.py)
     filename_trimmed = "data/word2vec.40B.{}d.trimmed.npz".format(dim_word)
     use_pretrained = True
