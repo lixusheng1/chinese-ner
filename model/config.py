@@ -76,8 +76,4 @@ class Config():
 
 
     use_crf = True
-    use_attention=""
 
-    filter_size=[3]
-    filter_deep=30
-    out_channel=100
