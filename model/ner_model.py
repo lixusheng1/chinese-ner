@@ -78,12 +78,7 @@ class NERModel(BaseModel):
             output = tf.concat([output_fw, output_bw], axis=-1)
             output = tf.nn.dropout(output, self.dropout)
             print("output_lstm:",output.shape)
-        if self.config.use_attention=="dot_attention":
-            output=dot_attention(output,output,self.config.hidden_size_lstm)
-        elif  self.config.use_attention=="attentive_attention":
-            output=attentive_attention(output,output,hidden=self.config.hidden_size_lstm)
-        elif self.config.use_attention=="multihead_attention":
-            output=multihead_attention(output,output,num_heads=4,dropout=self.dropout)
+
         with tf.variable_scope("proj"):
             self.logits = tf.layers.dense(output,self.config.ntags,use_bias=True)
 
