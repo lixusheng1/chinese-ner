@@ -6,7 +6,6 @@ from .data_utils import minibatches, pad_sequences, get_chunks,UNK
 from .general_utils import Progbar
 from .base_model import BaseModel
 from  tensorflow.contrib.layers import xavier_initializer,batch_norm
-from .attnetion import multihead_attention,dot_attention,attention,attentive_attention,residual_block
 from tensorflow.contrib import rnn
 
 class NERModel(BaseModel):
